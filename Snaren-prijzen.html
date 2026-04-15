@@ -1,24 +1,194 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Snaren & Prijzen – SMASH! Bespanservice</title>
-  <link rel="stylesheet" href="css/style.css"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snaren & Prijzen – SMASH!</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="navbar">
+
+<nav class="navbar">
   <a class="nav-logo" href="index.html">SMASH<span>!</span></a>
+
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="snaren-prijzen.html">Snaren &amp; Prijzen</a></li>
+    <li><a href="snaren-prijzen.html">Snaren & Prijzen</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="quiz.html">Quiz</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
+
   <div class="nav-right">
-    <button class="dark-mode">🌙 Dark</button>
+    <button class="dark-toggle">🌙 Dark</button>
     <button class="hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
+
+
+<div class="mobile-menu">
+  <a href="index.html">🏠 Home</a>
+  <a href="snaren-prijzen.html">🎾 Snaren</a>
+  <a href="team.html">👥 Team</a>
+  <a href="quiz.html">🧠 Quiz</a>
+  <a href="contact.html">📬 Contact</a>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in">ONZE <span>SNAREN</span></h2>
+    <p class="section-subtitle fade-in">Kies de snaar die bij jou past</p>
+
+    <div class="snaren-grid">
+
+      <div class="snaar-card populair fade-in">
+        <div style="font-size:2rem;">🎾</div>
+        <div class="snaar-naam">Head Sonic Pro</div>
+        <div class="snaar-prijs">€20</div>
+        <ul class="snaar-specs">
+          <li>Polyester</li>
+          <li>Controle & gevoel</li>
+          <li>Allround spelers</li>
+        </ul>
+        <a href="contact.html" class="btn btn-groen">Bestel</a>
+      </div>
+
+      <div class="snaar-card fade-in">
+        <div style="font-size:2rem;">💚</div>
+        <div class="snaar-naam">Pro's Pro</div>
+        <div class="snaar-prijs">€15</div>
+        <ul class="snaar-specs">
+          <li>Polyester</li>
+          <li>Betrouwbaar</li>
+          <li>Beginners</li>
+        </ul>
+        <a href="contact.html" class="btn btn-groen">Bestel</a>
+      </div>
+
+      <div class="snaar-card luxe fade-in">
+        <div style="font-size:2rem;">💎</div>
+        <div class="snaar-naam">Luxilon Alu Power</div>
+        <div class="snaar-prijs">€35</div>
+        <ul class="snaar-specs">
+          <li>Monofilament</li>
+          <li>Power & spin</li>
+          <li>Pro niveau</li>
+        </ul>
+        <a href="contact.html" class="btn btn-primary">Bestel</a>
+      </div>
+
+      <div class="snaar-card fade-in">
+        <div style="font-size:2rem;">🤝</div>
+        <div class="snaar-naam">Eigen snaar</div>
+        <div class="snaar-prijs">€12,50</div>
+        <ul class="snaar-specs">
+          <li>Zelf meenemen</li>
+          <li>Goedkoopste optie</li>
+          <li>Professioneel bespannen</li>
+        </ul>
+        <a href="contact.html" class="btn btn-groen">Bestel</a>
+      </div>
+
+    </div>
+
+    
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1rem; margin-top:1.5rem;" class="fade-in">
+
+      <div style="background:var(--lichtgrijs); padding:1rem; border-radius:var(--radius); text-align:center;">
+        <div style="font-size:1.5rem;">✋</div>
+        <div style="font-weight:bold;">Nieuw gripje</div>
+        <div style="color:var(--oranje); font-size:1.3rem;">€2,50</div>
+      </div>
+
+      <div style="background:var(--lichtgrijs); padding:1rem; border-radius:var(--radius); text-align:center;">
+        <div style="font-size:1.5rem;">🚴</div>
+        <div style="font-weight:bold;">Bezorgservice Woerden</div>
+        <div style="color:var(--oranje); font-size:1.3rem;">€2,50</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- VERGELIJKER -->
+<section class="section">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in">SNAREN <span>VERGELIJKER</span></h2>
+
+    <div class="vergelijker-box fade-in">
+
+      <div class="vergelijker-selects">
+        <select id="verg1">
+          <option value="hsp">Head Sonic Pro</option>
+          <option value="pros">Pro's Pro</option>
+          <option value="luxilon">Luxilon</option>
+          <option value="eigen">Eigen snaar</option>
+        </select>
+
+        <span>VS</span>
+
+        <select id="verg2">
+          <option value="pros">Pro's Pro</option>
+          <option value="hsp">Head Sonic Pro</option>
+          <option value="luxilon">Luxilon</option>
+          <option value="eigen">Eigen snaar</option>
+        </select>
+      </div>
+
+      <div class="vergelijker-result">
+        <div id="verg-col1"></div>
+        <div id="verg-col2"></div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="section-inner">
+
+    <h2 class="section-title fade-in">PRIJS <span>CALCULATOR</span></h2>
+
+    <div id="calculator" class="calculator fade-in">
+
+      <select id="calc-snaar">
+        <option value="hsp">Head Sonic Pro</option>
+        <option value="pros">Pro's Pro</option>
+        <option value="luxilon">Luxilon</option>
+        <option value="eigen">Eigen snaar</option>
+      </select>
+
+      <label><input type="checkbox" id="calc-grip"> Grip +€2,50</label>
+      <label><input type="checkbox" id="calc-bezorg"> Bezorging +€2,50</label>
+
+      <div id="calc-totaal" class="totaal-prijs">€20,00</div>
+
+      <a href="contact.html" class="btn btn-primary">Bestellen</a>
+
+    </div>
+
+  </div>
+</section>
+
+<div class="cookies-popup">
+  <h3>🍪 Cookies</h3>
+  <p>Wij gebruiken cookies.</p>
+  <button class="btn-accept">Accepteren</button>
+  <button class="btn-decline">Weigeren</button>
+</div>
+
+
+<footer>
+  <div class="footer-logo">SMASH! BESPANSERVICE</div>
+</footer>
+
+<script src="main.js"></script>
+
+</body>
+</html>
