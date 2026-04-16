@@ -35,3 +35,22 @@ function berekenPrijs() {
         el.textContent = '€' + totaal.toFixed(2).replace('.', ',').replace(',00', ',-');
     }
 }
+function verstuurBericht() {
+    const naam = document.getElementById('naam')?.value.trim();
+    const email = document.getElementById('email')?.value.trim();
+    const bericht = document.getElementById('bericht')?.value.trim();
+
+    if (!naam || !email || !bericht) {
+        alert('Vul alle velden in voordat je verstuurt!');
+        return;
+    }
+
+    const onderwerp = encodeURIComponent('Bespanning aanvraag van ' + naam);
+    const body = encodeURIComponent('Naam: ' + naam + '\nE-mail: ' + email + '\n\n' + bericht);
+    window.location.href = 'mailto:smashrackets@gmail.com?subject=' + onderwerp + '&body=' + body;
+
+    const bevestiging = document.getElementById('form-bevestiging');
+    if (bevestiging) {
+        bevestiging.classList.remove('verborgen');
+    }
+}
