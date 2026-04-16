@@ -1,373 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&display=swap');
 
 :root {
-  --oranje: #E8651A;
-  --groen: #2D7A3A;
-  --wit: #FFFFFF;
-  --geel: #F5C518;
-  --zwart: #1A1A1A;
-  --lichtgrijs: #f4f4f4;
-  --donkergroen: #1e5628;
-  --shadow: 0 6px 25px rgba(0,0,0,0.12);
-  --radius: 12px;
+    --oranje: #e86b2c;
+    --groen: #2d7a3a;
+    --wit: #ffffff;
+    --lichtgrijs: #f4f4f4;
+    --tekst: #1a1a1a;
+    --kaart: #ffffff;
+    --header-bg: #2d7a3a;
+    --footer-bg: #1e5229;
+    --border: #ddd;
+    --knop-tekst: #1a1a1a;
+}
+
+body.dark {
+    --lichtgrijs: #1a1a1a;
+    --tekst: #f0f0f0;
+    --kaart: #2a2a2a;
+    --header-bg: #163d1e;
+    --footer-bg: #111;
+    --border: #444;
+    --wit: #2a2a2a;
+    --knop-tekst: #f0f0f0;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  background: var(--wit);
-  color: var(--zwart);
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--lichtgrijs);
+    color: var(--tekst);
+    font-size: 16px;
+    transition: background 0.3s, color 0.3s;
 }
 
-.page {
-  padding-top: 65px;
+main {
+    animation: instappen 0.5s ease-in-out;
 }
 
-
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 65px;
-  background: var(--groen);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  z-index: 1000;
-  box-shadow: var(--shadow);
-}
-
-.nav-logo {
-  font-family: 'Bebas Neue';
-  font-size: 1.8rem;
-  color: white;
-  text-decoration: none;
-}
-
-.nav-logo span {
-  color: var(--oranje);
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Oswald';
-  padding: 5px 10px;
-  border-radius: 6px;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-  background: var(--oranje);
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.dark-toggle {
-  border: 2px solid white;
-  background: none;
-  color: white;
-  border-radius: 20px;
-  padding: 5px 12px;
-  cursor: pointer;
-}
-
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: white;
-  border-radius: 3px;
-}
-
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  background: var(--donkergroen);
-  position: fixed;
-  top: 65px;
-  width: 100%;
-  z-index: 999;
-}
-
-.mobile-menu.open {
-  display: flex;
-}
-
-.mobile-menu a {
-  padding: 12px;
-  color: white;
-  text-decoration: none;
-  font-family: 'Oswald';
-}
-
-.mobile-menu a:hover {
-  background: var(--oranje);
-}
-
-.section {
-  padding: 5rem 2rem;
-}
-
-.section-inner {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-title {
-  font-family: 'Bebas Neue';
-  font-size: 2.8rem;
-  color: var(--groen);
-  margin-bottom: 0.5rem;
-}
-
-.section-title span {
-  color: var(--oranje);
-}
-
-.section-subtitle {
-  color: #666;
-  margin-bottom: 2.5rem;
-}
-
-.snaren-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 2rem;
-  align-items: stretch;
-}
-
-.snaar-card {
-  background: var(--wit);
-  padding: 2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: 0.2s;
-}
-
-.snaar-card:hover {
-  transform: translateY(-6px);
-}
-
-.snaar-naam {
-  font-family: 'Oswald';
-  font-weight: 700;
-  color: var(--groen);
-  margin: 0.5rem 0;
-}
-
-.snaar-prijs {
-  font-family: 'Bebas Neue';
-  font-size: 2.8rem;
-  color: var(--oranje);
-}
-
-.snaar-specs {
-  list-style: none;
-  margin-top: 1rem;
-  text-align: left;
-}
-
-.snaar-specs li {
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-  font-size: 0.9rem;
-}
-
-.snaar-specs li::before {
-  content: "✓";
-  color: var(--groen);
-  margin-right: 8px;
-}
-
-.extras {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.extra-box {
-  background: var(--wit);
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  text-align: center;
-  box-shadow: var(--shadow);
-}
-
-.extra-box strong {
-  display: block;
-  color: var(--groen);
-}
-
-.extra-box span {
-  font-family: 'Bebas Neue';
-  font-size: 2rem;
-  color: var(--oranje);
-}
-
-.vergelijker-box {
-  background: var(--lichtgrijs);
-  padding: 2rem;
-  border-radius: var(--radius);
-}
-
-.vergelijker-selects {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-bottom: 1.5rem;
-}
-
-.vergelijker-selects select {
-  flex: 1;
-  padding: 10px;
-  border-radius: 8px;
-  border: 2px solid var(--groen);
-}
-
-.vergelijker-result {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.verg-col {
-  background: var(--wit);
-  padding: 1.2rem;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-}
-
-.verg-row {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-
-.calculator {
-  background: var(--groen);
-  color: white;
-  padding: 2rem;
-  border-radius: var(--radius);
-  max-width: 500px;
-  margin: auto;
-  text-align: center;
-}
-
-.calculator select,
-.calculator input {
-  width: 100%;
-  margin: 0.5rem 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: none;
-}
-
-.totaal-prijs {
-  font-family: 'Bebas Neue';
-  font-size: 3rem;
-  margin-top: 1rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 20px;
-  text-decoration: none;
-  font-family: 'Oswald';
-  margin-top: 1rem;
-}
-
-.btn-primary {
-  background: var(--oranje);
-  color: white;
-}
-
-.btn-groen {
-  background: var(--groen);
-  color: white;
-}
-
-/* ===== COOKIES ===== */
-.cookies-popup {
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background: var(--zwart);
-  color: white;
-  padding: 1.5rem;
-  border-radius: var(--radius);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: 0.3s;
-}
-
-.cookies-popup.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.btn-accept {
-  background: var(--groen);
-  color: white;
-}
-
-.btn-decline {
-  background: none;
-  color: white;
-  border: 1px solid white;
-}
-
-/* ===== DARK MODE ===== */
-body.dark {
-  background: #121212;
-  color: #eee;
-}
-
-body.dark .snaar-card,
-body.dark .verg-col,
-body.dark .extra-box {
-  background: #2a2a2a;
-}
-
-body.dark .vergelijker-box {
-  background: #1f1f1f;
-}
-
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  .vergelijker-result { grid-template-columns: 1fr; }
+@keyframes instappen {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
 }
