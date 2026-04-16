@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Nunito:wght@400;600;700&display=swap');
 
-
 :root {
   --oranje: #E8651A;
   --groen: #2D7A3A;
@@ -9,17 +8,26 @@
   --zwart: #1A1A1A;
   --lichtgrijs: #f4f4f4;
   --donkergroen: #1e5628;
-  --shadow: 0 4px 20px rgba(0,0,0,0.15);
+  --shadow: 0 6px 25px rgba(0,0,0,0.12);
   --radius: 12px;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  margin: 0;
   font-family: 'Nunito', sans-serif;
   background: var(--wit);
   color: var(--zwart);
 }
+
+.page {
+  padding-top: 65px;
+}
+
 
 .navbar {
   position: fixed;
@@ -56,17 +64,18 @@ body {
   color: white;
   text-decoration: none;
   font-family: 'Oswald';
-}
-
-.nav-links a.active,
-.nav-links a:hover {
-  background: var(--oranje);
   padding: 5px 10px;
   border-radius: 6px;
 }
 
+.nav-links a:hover,
+.nav-links a.active {
+  background: var(--oranje);
+}
+
 .nav-right {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -75,9 +84,10 @@ body {
   background: none;
   color: white;
   border-radius: 20px;
-  padding: 5px 10px;
+  padding: 5px 12px;
   cursor: pointer;
 }
+
 
 .hamburger {
   display: none;
@@ -85,12 +95,14 @@ body {
   gap: 5px;
   background: none;
   border: none;
+  cursor: pointer;
 }
 
 .hamburger span {
   width: 25px;
   height: 3px;
   background: white;
+  border-radius: 3px;
 }
 
 .mobile-menu {
@@ -100,6 +112,7 @@ body {
   position: fixed;
   top: 65px;
   width: 100%;
+  z-index: 999;
 }
 
 .mobile-menu.open {
@@ -107,14 +120,18 @@ body {
 }
 
 .mobile-menu a {
-  padding: 10px;
+  padding: 12px;
   color: white;
   text-decoration: none;
+  font-family: 'Oswald';
+}
+
+.mobile-menu a:hover {
+  background: var(--oranje);
 }
 
 .section {
   padding: 5rem 2rem;
-  margin-top: 65px;
 }
 
 .section-inner {
@@ -124,8 +141,9 @@ body {
 
 .section-title {
   font-family: 'Bebas Neue';
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: var(--groen);
+  margin-bottom: 0.5rem;
 }
 
 .section-title span {
@@ -134,19 +152,14 @@ body {
 
 .section-subtitle {
   color: #666;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
-
-
-
-
-
-
 
 .snaren-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 2rem;
+  align-items: stretch;
 }
 
 .snaar-card {
@@ -155,51 +168,72 @@ body {
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.2s;
 }
 
 .snaar-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
 }
 
 .snaar-naam {
   font-family: 'Oswald';
-  color: var(--groen);
   font-weight: 700;
+  color: var(--groen);
+  margin: 0.5rem 0;
 }
 
 .snaar-prijs {
   font-family: 'Bebas Neue';
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: var(--oranje);
 }
 
 .snaar-specs {
   list-style: none;
-  padding: 0;
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.snaar-specs li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 0.9rem;
 }
 
 .snaar-specs li::before {
-  content: "✓ ";
+  content: "✓";
   color: var(--groen);
+  margin-right: 8px;
 }
-
 
 .extras {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
   gap: 1rem;
   margin-top: 2rem;
 }
 
 .extra-box {
-  background: var(--lichtgrijs);
-  padding: 1rem;
+  background: var(--wit);
+  padding: 1.5rem;
   border-radius: var(--radius);
   text-align: center;
+  box-shadow: var(--shadow);
 }
 
+.extra-box strong {
+  display: block;
+  color: var(--groen);
+}
 
-
+.extra-box span {
+  font-family: 'Bebas Neue';
+  font-size: 2rem;
+  color: var(--oranje);
+}
 
 .vergelijker-box {
   background: var(--lichtgrijs);
@@ -210,6 +244,15 @@ body {
 .vergelijker-selects {
   display: flex;
   gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.vergelijker-selects select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--groen);
 }
 
 .vergelijker-result {
@@ -219,10 +262,19 @@ body {
 }
 
 .verg-col {
-  background: white;
-  padding: 1rem;
+  background: var(--wit);
+  padding: 1.2rem;
   border-radius: var(--radius);
+  box-shadow: var(--shadow);
 }
+
+.verg-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
 
 .calculator {
   background: var(--groen);
@@ -231,20 +283,51 @@ body {
   border-radius: var(--radius);
   max-width: 500px;
   margin: auto;
+  text-align: center;
+}
+
+.calculator select,
+.calculator input {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
 }
 
 .totaal-prijs {
   font-family: 'Bebas Neue';
-  font-size: 2.5rem;
+  font-size: 3rem;
+  margin-top: 1rem;
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-family: 'Oswald';
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background: var(--oranje);
+  color: white;
+}
+
+.btn-groen {
+  background: var(--groen);
+  color: white;
+}
+
+/* ===== COOKIES ===== */
 .cookies-popup {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background: black;
+  background: var(--zwart);
   color: white;
-  padding: 1rem;
+  padding: 1.5rem;
   border-radius: var(--radius);
   opacity: 0;
   transform: translateY(50px);
@@ -267,15 +350,20 @@ body {
   border: 1px solid white;
 }
 
-
+/* ===== DARK MODE ===== */
 body.dark {
   background: #121212;
   color: #eee;
 }
 
 body.dark .snaar-card,
-body.dark .verg-col {
+body.dark .verg-col,
+body.dark .extra-box {
   background: #2a2a2a;
+}
+
+body.dark .vergelijker-box {
+  background: #1f1f1f;
 }
 
 @media (max-width: 768px) {
