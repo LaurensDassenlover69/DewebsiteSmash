@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Smash!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">🎾 SMASH!</div>
+        <nav>
+            <a href="index.html" class="knop">Home</a>
+            <a href="diensten.html" class="knop">Diensten & Prijzen</a>
+            <a href="snaarquiz.html" class="knop">Snaar Quiz</a>
+            <a href="team.html" class="knop">Ons Team</a>
+            <a href="contact.html" class="knop actief">Contact</a>
+        </nav>
+        <button id="darkmode-knop" onclick="toggleDark()">🌙 Dark mode</button>
+    </div>
+</header>
+
+<main>
+    <section class="contact-kaart">
+        <h1>Neem contact op</h1>
+        <p class="intro">Wil je je racket laten bespannen? Stuur ons een bericht en we reageren zo snel mogelijk!</p>
+
+        <div class="gegevens">
+            <h2>📧 E-mail</h2>
+            <p><a href="mailto:smashrackets@gmail.com?subject=Bespanning aanvragen">smashrackets@gmail.com</a></p>
+
+            <h2>📱 WhatsApp / Telefoon</h2>
+            <p><a href="tel:0630824921">06 30824921</a></p>
+
+            <h2>📍 Locatie</h2>
+            <p>
+                <a href="https://www.google.com/maps/search/TV+Vep+Woerden" target="_blank">
+                    TV Vep, Woerden
+                </a>
+            </p>
+
+            <h2>🌐 Social media</h2>
+            <p>
+                <a href="https://www.instagram.com/smash_woerden/" target="_blank">📷 Instagram: @smash_woerden</a>
+            </p>
+        </div>
+
+        <div class="contact-form">
+            <h2>✉️ Stuur een bericht</h2>
+            <input type="text" id="naam" placeholder="Jouw naam">
+            <input type="email" id="email" placeholder="Jouw e-mailadres">
+            <textarea id="bericht" placeholder="Jouw bericht (bijv. welk racket, welke snaar, bezorgservice?)"></textarea>
+            <button class="cta-knop" onclick="verstuurBericht()">Verstuur bericht →</button>
+            <p id="form-bevestiging" class="verborgen form-ok">✅ Bedankt! We nemen snel contact met je op.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Smash! Bespanservice Woerden &nbsp;|&nbsp; smashrackets@gmail.com &nbsp;|&nbsp; 06 30824921</p>
+    <p>📷 <a href="https://www.instagram.com/smash_woerden/" target="_blank">@smash_woerden</a></p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
