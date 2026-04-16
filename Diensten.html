@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diensten & Prijzen - Smash!</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-inner">
+        <div class="logo">🎾 SMASH!</div>
+        <nav>
+            <a href="index.html" class="knop">Home</a>
+            <a href="diensten.html" class="knop actief">Diensten & Prijzen</a>
+            <a href="snaarquiz.html" class="knop">Snaar Quiz</a>
+            <a href="team.html" class="knop">Ons Team</a>
+            <a href="contact.html" class="knop">Contact</a>
+        </nav>
+        <button id="darkmode-knop" onclick="toggleDark()">🌙 Dark mode</button>
+    </div>
+</header>
+
+<main>
+    <section class="pagina-titel">
+        <h1>Diensten & Prijzen</h1>
+        <p>Alles wat wij aanbieden, eerlijk en transparant.</p>
+    </section>
+
+    <section class="prijzen-grid">
+        <div class="prijs-kaart uitgelicht">
+            <div class="badge">⭐ Populairst</div>
+            <h3>Head Sonic Pro</h3>
+            <p class="snaar-info">Onze standaard snaar. Perfect voor alle niveaus. Geweldige combinatie van controle en kracht.</p>
+            <div class="prijs">€20,-</div>
+        </div>
+        <div class="prijs-kaart">
+            <h3>Pro's Pro</h3>
+            <p class="snaar-info">Budget optie. Niet de eerste keus. Ideaal voor beginners en recreanten.</p>
+            <div class="prijs">€15,-</div>
+        </div>
+        <div class="prijs-kaart">
+            <h3>Luxilon Alu Power</h3>
+            <p class="snaar-info">Topsnaar voor de gevorderde speler. Extra spin en controle. De keuze van de profs.</p>
+            <div class="prijs">€35,-</div>
+        </div>
+        <div class="prijs-kaart">
+            <h3>Eigen snaar meenemen</h3>
+            <p class="snaar-info">Heb je al een snaar? Geen probleem! Wij spannen hem in voor een scherp tarief.</p>
+            <div class="prijs">€12,50</div>
+        </div>
+    </section>
+
+    <section class="extra-diensten">
+        <h2>Extra's</h2>
+        <div class="extra-grid">
+            <div class="extra-item">
+                <span class="icon">🤜</span>
+                <h4>Grip vervangen</h4>
+                <p>Nieuw grip, beter gevoel. Voor elke raketsoort (zelfs padel!).</p>
+                <strong>€2,50</strong>
+            </div>
+            <div class="extra-item">
+                <span class="icon">🚴</span>
+                <h4>Bezorgservice Woerden</h4>
+                <p>Wij halen je racket op en brengen het terug!</p>
+                <strong>€2,50</strong>
+
+                
+            </div>
+            <div class="extra-item">
+                <span class="icon">🙂</span>
+                <h4>Dempertje</h4>
+                <p>Een dempertje zorgt net voor die extra feeling voor je racket!</p>
+                <strong>€2,50</strong>
+        </div>
+    </section>
+
+
+    <section class="calculator">
+        <h2>🧮 Bereken jouw prijs</h2>
+        <p>Kies je opties en zie direct wat het kost.</p>
+
+        <div class="calcding">
+            <label for="snaar-keuze">Welke snaar?</label>
+            <select id="snaar-keuze" onchange="berekenPrijs()">
+                <option value="20">Head Sonic Pro – €20,-</option>
+                <option value="15">Pro's Pro – €15,-</option>
+                <option value="35">Luxilon Alu Power – €35,-</option>
+                <option value="12.50">Eigen snaar – €12,50</option>
+            </select>
+
+            <label>
+                <input type="checkbox" id="grip" onchange="berekenPrijs()"> Grip vervangen (+€2,50)
+            </label>
+            <label>
+                <input type="checkbox" id="bezorg" onchange="berekenPrijs()"> Bezorgservice (+€2,50)
+            </label>
+             <label>
+                <input type="checkbox" id="Demp" onchange="berekenPrijs()"> Dempertje (+€2,50)
+            </label>
+
+            <div class="totaal">
+                Totaal: <span id="totaal-prijs">€20,-</span>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 Smash! Bespanservice Woerden &nbsp;|&nbsp; smashrackets@gmail.com &nbsp;|&nbsp; 06 30824921</p>
+    <p>📷 <a href="https://www.instagram.com/smash_woerden/" target="_blank">@smash_woerden</a></p>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
