@@ -21,7 +21,7 @@ body.dark {
     --header-bg: #163d1e;
     --footer-bg: #111;
     --border: #444;
-    --wit: #7e7e7e;
+    --wit: #2a2a2a;
     --knop-tekst: #f0f0f0;
 }
 
@@ -48,15 +48,15 @@ main {
     to { opacity: 1; transform: translateY(0); }
 }
 
+
 header {
     background: var(--header-bg);
     padding: 14px 30px;
     position: fixed;
-    top: 0; left: 0;
+    top: 0;
     width: 100%;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
+
 .header-inner {
     display: flex;
     align-items: center;
@@ -66,25 +66,33 @@ header {
     flex-wrap: wrap;
     gap: 10px;
 }
+
 .logo {
     font-family: 'Bebas Neue', cursive;
     font-size: 2rem;
     color: var(--wit);
-    letter-spacing: 2px;
 }
-nav { display: flex; gap: 8px; flex-wrap: wrap; }
+
+nav {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
 .knop {
-    display: inline-block;
     padding: 6px 14px;
     background: rgba(255,255,255,0.15);
     color: white;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 700;
-    font-size: 0.9rem;
-    transition: 0.2s;
 }
-.knop:hover, .knop.actief { background: var(--oranje); color: white; }
+
+.knop:hover, 
+.knop.actief {
+    background: var(--oranje);
+}
+
 #darkmode-knop {
     background: rgba(255,255,255,0.2);
     border: none;
@@ -92,372 +100,127 @@ nav { display: flex; gap: 8px; flex-wrap: wrap; }
     padding: 6px 14px;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: 700;
-    font-family: 'Nunito', sans-serif;
-    font-size: 0.9rem;
+}
+
+#darkmode-knop:hover {
+    background: var(--oranje);
+}
+
+.tiptop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 110px auto 40px;
+    padding: 40px 30px;
+    background: var(--groen);
+    border-radius: 20px;
+    color: white;
+    gap: 30px;
+}
+
+.tiptop-tekst h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.tiptop-tekst h1 span {
+    color: var(--oranje);
+}
+
+.tiptop-tekst p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+    max-width: 450px;
+}
+
+.tiptop-logo-groot {
+    font-size: 8rem;
+}
+
+.bespannen-knop {
+    display: inline-block;
+    background: var(--oranje);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 900;
     transition: 0.2s;
 }
-#darkmode-knop:hover { background: var(--oranje); }
- 
-.pagina-titel {
-    text-align: center;
-    max-width: 700px;
-    margin: 110px auto 40px auto;
-    padding: 30px;
+
+.bespannen-knop:hover {
+    background: #c95a1f;
+    transform: translateY(-2px);
 }
-.pagina-titel h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 3rem;
+
+.bespannen-knop.wit {
+    background: white;
     color: var(--groen);
-    margin-bottom: 10px;
 }
-body.dark .pagina-titel h1 { color: var(--oranje); }
-.pagina-titel p { font-size: 1.1rem; color: #666; }
-body.dark .pagina-titel p { color: #aaa; }
- 
-.prijzen-grid {
+
+.bespannen-knop.wit:hover {
+    background: #e0e0e0;
+}
+
+.voordelen {
     display: flex;
     gap: 20px;
     max-width: 1000px;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 40px;
     padding: 0 20px;
     flex-wrap: wrap;
 }
-.prijs-kaart {
+
+.voordeel {
     flex: 1;
     min-width: 200px;
     background: var(--kaart);
     border-radius: 14px;
     padding: 24px 20px;
     text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    border: 2px solid var(--border);
-    position: relative;
+    border-top: 4px solid var(--oranje);
     transition: 0.2s;
 }
-.prijs-kaart:hover { transform: translateY(-4px); border-color: var(--oranje); }
-.prijs-kaart.uitgelicht { border-color: var(--oranje); border-width: 3px; }
-.badge {
-    position: absolute;
-    top: -14px; left: 50%;
-    transform: translateX(-50%);
+
+.voordeel:hover {
+    transform: translateY(-4px);
+}
+
+.voordeel .icon {
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.voordeel h3 {
+    color: var(--groen);
+    margin-bottom: 8px;
+}
+
+.bespannen-banner {
     background: var(--oranje);
     color: white;
-    padding: 4px 14px;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    white-space: nowrap;
-}
-.prijs-kaart h3 {
-    color: var(--groen);
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-.snaar-info { font-size: 0.95rem; color: #666; line-height: 1.5; margin-bottom: 16px; }
-body.dark .snaar-info { color: #aaa; }
-.prijs { font-family: 'Bebas Neue', cursive; font-size: 2.2rem; color: var(--oranje); }
- 
-.snaar-foto-wrap {
-    width: 100%;
-    height: 150px;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 14px;
-    background: var(--lichtgrijs);
-}
- 
-.snaar-foto {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
- 
-.prijs-kaart:hover .snaar-foto {
-    transform: scale(1.05);
-}
- 
-.extra-foto-wrap {
-    width: 100%;
-    height: 120px;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 12px;
-    background: var(--lichtgrijs);
-}
- 
-.extra-foto {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
- 
-.extra-item:hover .extra-foto {
-    transform: scale(1.05);
-}
- 
-.extra-diensten {
-    max-width: 700px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
-}
-.extra-diensten h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    color: var(--groen);
-    margin-bottom: 20px;
     text-align: center;
-}
-body.dark .extra-diensten h2 { color: var(--oranje); }
-.extra-grid { display: flex; gap: 20px; flex-wrap: wrap; }
-.extra-item {
-    flex: 1;
-    min-width: 200px;
-    background: var(--kaart);
-    border-radius: 14px;
-    padding: 24px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-}
-.extra-item .icon { font-size: 2rem; display: block; margin-bottom: 10px; }
-.extra-item h4 { color: var(--groen); margin-bottom: 8px; }
-.extra-item strong {
-    color: var(--oranje);
-    font-size: 1.5rem;
-    font-family: 'Bebas Neue', cursive;
-    display: block;
-    margin-top: 10px;
-}
- 
-.calculator {
-    max-width: 600px;
-    margin: 0 auto 60px auto;
-    background: var(--kaart);
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.calculator h2 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    color: var(--groen);
-    margin-bottom: 8px;
-}
-body.dark .calculator h2 { color: var(--oranje); }
-.calculator p { color: #666; margin-bottom: 20px; }
-body.dark .calculator p { color: #aaa; }
-.calcding { display: flex; flex-direction: column; gap: 14px; text-align: left; }
-.calcding label {
-    font-weight: 700;
-    color: var(--tekst);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.calcding select {
-    width: 100%;
-    padding: 10px 14px;
-    border-radius: 8px;
-    border: 2px solid var(--border);
-    font-size: 1rem;
-    font-family: 'Nunito', sans-serif;
-    background: var(--kaart);
-    color: var(--tekst);
-    margin-top: 4px;
-}
-.totaal {
-    background: var(--groen);
-    color: white;
-    padding: 16px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 1.4rem;
-    font-weight: 900;
-    margin-top: 10px;
-}
-.totaal span {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2rem;
-    color: var(--oranje);
-}
- 
-footer {
-    background: var(--footer-bg);
-    color: rgba(255,255,255,0.8);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    line-height: 1.8;
-}
-footer a { color: var(--oranje); text-decoration: none; font-weight: 700; }
-footer a:hover { text-decoration: underline; }
- 
-@media (max-width: 700px) {
-    .header-inner { flex-direction: column; align-items: flex-start; }
-}
-.team-grid {
-    display: flex;
-    gap: 20px;
+    padding: 50px 30px;
     max-width: 1000px;
-    margin: 0 auto 40px auto;
-    padding: 0 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin: 0 auto 40px;
+    border-radius: 16px;
 }
 
-.team-kaart {
-    background: var(--kaart);
-    border-radius: 14px;
-    padding: 30px 24px;
-    text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-    width: 180px;
-    transition: 0.2s;
-    border-top: 4px solid var(--groen);
-}
-
-.team-kaart:hover {
-    transform: translateY(-6px);
-    border-top-color: var(--oranje);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
-}
-
-.avatar {
-    font-size: 3rem;
+.bespannen-banner h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.5rem;
     margin-bottom: 12px;
 }
 
-.team-kaart h3 {
-    color: var(--groen);
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+.bespannen-banner p {
+    margin-bottom: 24px;
 }
 
-.team-kaart p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.5;
-}
-
-body.dark .team-kaart p {
-    color: #aaa;
-}
-
-.contact-kaart {
-    max-width: 650px;
-    margin: 110px auto 60px auto;
-    background: var(--kaart);
-    padding: 40px 30px;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.contact-kaart h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.8rem;
-    color: var(--groen);
-    margin-bottom: 10px;
-}
-
-body.dark .contact-kaart h1 {
-    color: var(--oranje);
-}
-
-.intro {
-    color: #666;
-    margin-bottom: 30px;
-    font-size: 1.05rem;
-}
-
-body.dark .intro {
-    color: #aaa;
-}
-
-.gegevens h2 {
-    color: var(--groen);
-    font-size: 1.2rem;
-    margin: 20px 0 6px 0;
-}
-
-body.dark .gegevens h2 {
-    color: var(--oranje);
-}
-
-.gegevens p {
-    margin-bottom: 8px;
-}
-
-.gegevens a {
-    color: var(--oranje);
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.gegevens a:hover {
-    text-decoration: underline;
-}
-
-.contact-form {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    text-align: left;
-}
-
-.contact-form h2 {
-    color: var(--groen);
-    font-size: 1.4rem;
-    margin-bottom: 4px;
-}
-
-body.dark .contact-form h2 {
-    color: var(--oranje);
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 2px solid var(--border);
-    font-size: 1rem;
-    font-family: 'Nunito', sans-serif;
-    background: var(--lichtgrijs);
-    color: var(--tekst);
-    transition: 0.2s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--oranje);
-}
-
-.contact-form textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-.form-ok {
-    color: var(--groen);
-    font-weight: 700;
-    text-align: center;
-    font-size: 1.05rem;
-}
-main {
-    animation: instappen 0.5s ease-in-out;
-}
-
-@keyframes instappen {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-}
 
 @media (max-width: 700px) {
     .hero {
@@ -465,232 +228,17 @@ main {
         margin-top: 130px;
         text-align: center;
     }
-    .hero-tekst h1 {
+
+    .tiptop-tekst h1 {
         font-size: 2.5rem;
     }
-    .hero-logo-groot {
+
+    .tiptop-logo-groot {
         font-size: 5rem;
     }
+
     .header-inner {
         flex-direction: column;
         align-items: flex-start;
-    }
-}
-
-.pagina-titel {
-    text-align: center;
-    padding: 48px 20px 12px;
-}
-
-.pagina-titel h1 {
-    font-family: 'Bebas Neue', cursive;
-    font-size: clamp(2.4rem, 6vw, 3.6rem);
-    color: var(--groen);
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-}
-
-body.dark .pagina-titel h1 {
-    color: var(--oranje);
-}
-
-.pagina-titel p {
-    font-size: 1.05rem;
-    color: var(--tekst);
-    opacity: 0.75;
-}
-
-
-.quiz-voortgang {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 32px;
-}
-
-.quiz-stap-dot {
-    width: 36px;
-    height: 6px;
-    border-radius: 3px;
-    background: var(--border);
-    transition: background 0.3s ease;
-}
-
-.quiz-stap-dot.actief {
-    background: var(--oranje);
-}
-
-.quiz-stap-dot.klaar {
-    background: var(--groen);
-}
-
-
-.quiz-container {
-    max-width: 640px;
-    margin: 0 auto 70px auto;
-    background: var(--kaart);
-    padding: 40px 36px;
-    border-radius: 20px;
-    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-
-.quiz-stap {
-    animation: instappen 0.35s ease both;
-}
-
-@keyframes instappen {
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.quiz-stap h3 {
-    font-size: 1.35rem;
-    font-weight: 900;
-    color: var(--groen);
-    margin-bottom: 26px;
-    line-height: 1.3;
-}
-
-body.dark .quiz-stap h3 {
-    color: var(--oranje);
-}
-
-
-.quiz-opties {
-    display: flex;
-    flex-direction: column;
-    gap: 11px;
-}
-
-.quiz-btn {
-    background: var(--lichtgrijs);
-    border: 2px solid var(--border);
-    padding: 14px 20px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    cursor: pointer;
-    color: var(--tekst);
-    transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.18s;
-    text-align: left;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.quiz-btn:hover {
-    background: var(--oranje);
-    color: white;
-    border-color: var(--oranje);
-    transform: translateX(7px);
-}
-
-.quiz-btn:active {
-    transform: translateX(4px) scale(0.98);
-}
-
-
-.verborgen {
-    display: none !important;
-}
-
-
-.resultaat-kaart {
-    background: var(--groen);
-    color: white;
-    padding: 30px 28px;
-    border-radius: 18px;
-    margin: 20px 0 24px;
-    font-size: 1.08rem;
-    line-height: 1.65;
-    text-align: left;
-    position: relative;
-    overflow: hidden;
-}
-
-.resultaat-kaart::before {
-    content: '🎾';
-    position: absolute;
-    right: -10px;
-    bottom: -10px;
-    font-size: 5rem;
-    opacity: 0.1;
-    pointer-events: none;
-}
-
-.resultaat-kaart strong.snaar-naam {
-    font-family: 'Bebas Neue', cursive;
-    font-size: 2.1rem;
-    color: var(--oranje);
-    display: block;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-}
-
-.resultaat-prijs {
-    display: inline-block;
-    background: rgba(0, 0, 0, 0.18);
-    border-radius: 8px;
-    padding: 6px 16px;
-    margin: 10px 0 16px;
-    font-size: 1.25rem;
-    font-weight: 900;
-    color: var(--oranje);
-}
-
-.resultaat-bestel {
-    display: inline-block;
-    background: var(--oranje);
-    color: white;
-    font-weight: 800;
-    padding: 11px 24px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background 0.18s, transform 0.15s;
-    margin-top: 4px;
-}
-
-.resultaat-bestel:hover {
-    background: #c95a1f;
-    transform: translateY(-2px);
-}
-
-/* ===== OPNIEUW KNOP ===== */
-
-.cta-knop {
-    background: transparent;
-    border: 2px solid var(--border);
-    color: var(--tekst);
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
-    font-size: 0.95rem;
-    padding: 10px 22px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: border-color 0.18s, color 0.18s;
-}
-
-.cta-knop:hover {
-    border-color: var(--oranje);
-    color: var(--oranje);
-}
-
-
-@media (max-width: 520px) {
-    .quiz-container {
-        padding: 28px 18px;
-    }
-
-    .quiz-stap h3 {
-        font-size: 1.15rem;
     }
 }
