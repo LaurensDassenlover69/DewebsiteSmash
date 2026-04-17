@@ -161,3 +161,12 @@ function herstart() {
 
     document.getElementById('quiz-stap-1').classList.remove('verborgen');
 }
+let huidig = 0;
+const track = document.getElementById('draaiTrack');
+
+function verschuif(r) {
+    if (!track) return;
+    const slides = track.querySelectorAll('img');
+    huidig = (huidig + r + slides.length) % slides.length;
+    track.style.transform = `translateX(-${huidig * 100}%)`;
+}
