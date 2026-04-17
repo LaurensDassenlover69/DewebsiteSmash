@@ -98,7 +98,7 @@ nav { display: flex; gap: 8px; flex-wrap: wrap; }
     transition: 0.2s;
 }
 #darkmode-knop:hover { background: var(--oranje); }
-
+ 
 .pagina-titel {
     text-align: center;
     max-width: 700px;
@@ -114,7 +114,7 @@ nav { display: flex; gap: 8px; flex-wrap: wrap; }
 body.dark .pagina-titel h1 { color: var(--oranje); }
 .pagina-titel p { font-size: 1.1rem; color: #666; }
 body.dark .pagina-titel p { color: #aaa; }
-
+ 
 .prijzen-grid {
     display: flex;
     gap: 20px;
@@ -158,7 +158,47 @@ body.dark .pagina-titel p { color: #aaa; }
 .snaar-info { font-size: 0.95rem; color: #666; line-height: 1.5; margin-bottom: 16px; }
 body.dark .snaar-info { color: #aaa; }
 .prijs { font-family: 'Bebas Neue', cursive; font-size: 2.2rem; color: var(--oranje); }
-
+ 
+.snaar-foto-wrap {
+    width: 100%;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    background: var(--lichtgrijs);
+}
+ 
+.snaar-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+ 
+.prijs-kaart:hover .snaar-foto {
+    transform: scale(1.05);
+}
+ 
+.extra-foto-wrap {
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    background: var(--lichtgrijs);
+}
+ 
+.extra-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+ 
+.extra-item:hover .extra-foto {
+    transform: scale(1.05);
+}
+ 
 .extra-diensten {
     max-width: 700px;
     margin: 0 auto 40px auto;
@@ -191,7 +231,7 @@ body.dark .extra-diensten h2 { color: var(--oranje); }
     display: block;
     margin-top: 10px;
 }
-
+ 
 .calculator {
     max-width: 600px;
     margin: 0 auto 60px auto;
@@ -244,7 +284,7 @@ body.dark .calculator p { color: #aaa; }
     font-size: 2rem;
     color: var(--oranje);
 }
-
+ 
 footer {
     background: var(--footer-bg);
     color: rgba(255,255,255,0.8);
@@ -255,7 +295,7 @@ footer {
 }
 footer a { color: var(--oranje); text-decoration: none; font-weight: 700; }
 footer a:hover { text-decoration: underline; }
-
+ 
 @media (max-width: 700px) {
     .header-inner { flex-direction: column; align-items: flex-start; }
 }
@@ -434,5 +474,223 @@ main {
     .header-inner {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+.pagina-titel {
+    text-align: center;
+    padding: 48px 20px 12px;
+}
+
+.pagina-titel h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: clamp(2.4rem, 6vw, 3.6rem);
+    color: var(--groen);
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+body.dark .pagina-titel h1 {
+    color: var(--oranje);
+}
+
+.pagina-titel p {
+    font-size: 1.05rem;
+    color: var(--tekst);
+    opacity: 0.75;
+}
+
+
+.quiz-voortgang {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 32px;
+}
+
+.quiz-stap-dot {
+    width: 36px;
+    height: 6px;
+    border-radius: 3px;
+    background: var(--border);
+    transition: background 0.3s ease;
+}
+
+.quiz-stap-dot.actief {
+    background: var(--oranje);
+}
+
+.quiz-stap-dot.klaar {
+    background: var(--groen);
+}
+
+
+.quiz-container {
+    max-width: 640px;
+    margin: 0 auto 70px auto;
+    background: var(--kaart);
+    padding: 40px 36px;
+    border-radius: 20px;
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+
+.quiz-stap {
+    animation: instappen 0.35s ease both;
+}
+
+@keyframes instappen {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.quiz-stap h3 {
+    font-size: 1.35rem;
+    font-weight: 900;
+    color: var(--groen);
+    margin-bottom: 26px;
+    line-height: 1.3;
+}
+
+body.dark .quiz-stap h3 {
+    color: var(--oranje);
+}
+
+
+.quiz-opties {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.quiz-btn {
+    background: var(--lichtgrijs);
+    border: 2px solid var(--border);
+    padding: 14px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--tekst);
+    transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.18s;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quiz-btn:hover {
+    background: var(--oranje);
+    color: white;
+    border-color: var(--oranje);
+    transform: translateX(7px);
+}
+
+.quiz-btn:active {
+    transform: translateX(4px) scale(0.98);
+}
+
+
+.verborgen {
+    display: none !important;
+}
+
+
+.resultaat-kaart {
+    background: var(--groen);
+    color: white;
+    padding: 30px 28px;
+    border-radius: 18px;
+    margin: 20px 0 24px;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.resultaat-kaart::before {
+    content: '🎾';
+    position: absolute;
+    right: -10px;
+    bottom: -10px;
+    font-size: 5rem;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.resultaat-kaart strong.snaar-naam {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 2.1rem;
+    color: var(--oranje);
+    display: block;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.resultaat-prijs {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+    padding: 6px 16px;
+    margin: 10px 0 16px;
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: var(--oranje);
+}
+
+.resultaat-bestel {
+    display: inline-block;
+    background: var(--oranje);
+    color: white;
+    font-weight: 800;
+    padding: 11px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: background 0.18s, transform 0.15s;
+    margin-top: 4px;
+}
+
+.resultaat-bestel:hover {
+    background: #c95a1f;
+    transform: translateY(-2px);
+}
+
+/* ===== OPNIEUW KNOP ===== */
+
+.cta-knop {
+    background: transparent;
+    border: 2px solid var(--border);
+    color: var(--tekst);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 22px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.18s, color 0.18s;
+}
+
+.cta-knop:hover {
+    border-color: var(--oranje);
+    color: var(--oranje);
+}
+
+
+@media (max-width: 520px) {
+    .quiz-container {
+        padding: 28px 18px;
+    }
+
+    .quiz-stap h3 {
+        font-size: 1.15rem;
     }
 }
