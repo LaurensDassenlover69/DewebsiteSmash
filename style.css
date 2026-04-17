@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&display=swap');
 
-/* ── CSS Variabelen ── */
+
 :root {
     --oranje: #e86b2c;
     --groen: #2d7a3a;
@@ -21,11 +21,10 @@ body.dark {
     --header-bg: #163d1e;
     --footer-bg: #111;
     --border: #444;
-    --wit: #2a2a2a;
+    --wit: #4b4a4a;
     --knop-tekst: #f0f0f0;
 }
 
-/* ── Reset ── */
 * {
     margin: 0;
     padding: 0;
@@ -40,7 +39,7 @@ body {
     transition: background 0.3s, color 0.3s;
 }
 
-/* ── Animatie ── */
+
 main {
     animation: instappen 0.5s ease-in-out;
 }
@@ -50,7 +49,7 @@ main {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Header (FIXED + bovenop alles) ── */
+
 header {
     background: var(--header-bg);
     padding: 14px 30px;
@@ -120,7 +119,6 @@ nav {
     background: var(--oranje);
 }
 
-/* ── Hero (tiptop) ── */
 .tiptop {
     display: flex;
     align-items: center;
@@ -156,7 +154,6 @@ nav {
     font-size: 8rem;
 }
 
-/* ── Knoppen ── */
 .bespannen-knop {
     display: inline-block;
     background: var(--oranje);
@@ -182,7 +179,6 @@ nav {
     background: #e0e0e0;
 }
 
-/* ── Voordelen ── */
 .voordelen {
     display: flex;
     gap: 20px;
@@ -203,6 +199,15 @@ nav {
     transition: 0.2s;
 }
 
+
+
+
+
+
+
+
+
+
 .voordeel:hover {
     transform: translateY(-4px);
 }
@@ -218,7 +223,6 @@ nav {
     margin-bottom: 8px;
 }
 
-/* ── Banners ── */
 .bespannen-banner,
 .cta-banner {
     background: var(--oranje);
@@ -277,7 +281,6 @@ nav {
     transform: translateY(-2px);
 }
 
-/* ── Paginatitel ── */
 .pagina-titel {
     text-align: center;
     max-width: 700px;
@@ -303,7 +306,7 @@ body.dark .pagina-titel h1 {
     opacity: 0.75;
 }
 
-/* ── Prijzen ── */
+
 .prijzen-grid {
     display: flex;
     gap: 20px;
@@ -320,7 +323,7 @@ body.dark .pagina-titel h1 {
     border-radius: 14px;
     padding: 24px 20px;
     text-align: center;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.0000082);
     border: 2px solid var(--border);
     position: relative;
     transition: 0.2s;
@@ -394,7 +397,7 @@ body.dark .snaar-info {
     transform: scale(1.05);
 }
 
-/* ── Extra diensten ── */
+
 .extra-diensten {
     max-width: 700px;
     margin: 0 auto 40px auto;
@@ -426,7 +429,7 @@ body.dark .extra-diensten h2 {
     border-radius: 14px;
     padding: 24px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.000000000008);
 }
 
 .extra-item .icon {
@@ -468,12 +471,15 @@ body.dark .extra-diensten h2 {
     transform: scale(1.05);
 }
 
-/* ── Calculator ── */
+
+
 .calculator {
     max-width: 600px;
     margin: 0 auto 60px auto;
     background: var(--kaart);
     padding: 30px;
+
+
     border-radius: 16px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -533,7 +539,7 @@ body.dark .calculator p {
     border-radius: 10px;
     text-align: center;
     font-size: 1.4rem;
-    font-weight: 900;
+    font-weight: 670;
     margin-top: 10px;
 }
 
@@ -543,7 +549,6 @@ body.dark .calculator p {
     color: var(--oranje);
 }
 
-/* ── Quiz ── */
 .quiz-voortgang {
     display: flex;
     justify-content: center;
@@ -684,7 +689,6 @@ body.dark .quiz-stap h3 {
     transform: translateY(-2px);
 }
 
-/* ── Team ── */
 .team-grid {
     display: flex;
     gap: 20px;
@@ -846,10 +850,11 @@ body.dark .contact-form h2 { color: var(--oranje); }
     font-size: 1.05rem;
 }
 
-/* ── Foto carrousel ── */
 .draai-sectie {
     max-width: 860px;
     margin: 0 auto 40px auto;
+   
+   
     padding: 0 20px;
 }
 
@@ -896,7 +901,7 @@ body.dark .contact-form h2 { color: var(--oranje); }
     color: white;
 }
 
-/* ── Footer ── */
+
 footer {
     background: var(--footer-bg);
     color: rgba(255, 255, 255, 0.8);
@@ -914,7 +919,6 @@ footer a {
 
 footer a:hover { text-decoration: underline; }
 
-/* ── Responsive ── */
 @media (max-width: 700px) {
     .header-inner {
         flex-direction: column;
@@ -935,34 +939,54 @@ footer a:hover { text-decoration: underline; }
     .draai-track img { height: 200px; }
 }
 
-@media (max-width: 520px) {
-    .quiz-container { padding: 28px 18px; }
-    .quiz-stap h3   { font-size: 1.15rem; }
-}
-.lever-keuze {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 16px;
+.form-label {
+    font-weight: 700;
+    color: var(--tekst);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 0.95rem;
 }
 
-.lever-knop {
-    flex: 1;
-    padding: 12px;
-    border-radius: 10px;
+.contact-form select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
     border: 2px solid var(--border);
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
     background: var(--lichtgrijs);
     color: var(--tekst);
-    font-family: 'Nunito', sans-serif;
-    font-weight: 700;
+    transition: border-color 0.2s;
+    appearance: none;
     cursor: pointer;
-    transition: 0.2s;
 }
 
-.lever-knop.actief,
-.lever-knop:hover {
+.contact-form select:focus {
+    outline: none;
     border-color: var(--oranje);
-    color: var(--oranje);
-    background: var(--kaart);
+}
+
+.form-checkboxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--oranje);
+    cursor: pointer;
+    flex-shrink: 0;
 }
 
 .reactietijd {

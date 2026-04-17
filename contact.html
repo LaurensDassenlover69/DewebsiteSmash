@@ -26,7 +26,7 @@
 <main>
     <section class="contact-kaart">
         <h1>Neem contact op</h1>
-        <p class="intro">Wil je je racket laten bespannen? Stuur ons een bericht en we reageren zo snel mogelijk!</p>
+        <p class="intro">Wil je je racket laten bespannen? Vul het formulier in en we reageren zo snel mogelijk!</p>
 
         <div class="gegevens">
             <h2>📧 E-mail</h2>
@@ -48,21 +48,37 @@
             </p>
         </div>
 
-
-
         <div class="contact-form">
             <h2>✉️ Stuur een bericht</h2>
-             <div class="lever-keuze">
-        <button class="lever-knop actief" onclick="kiesLever('breng', this)">🎾 Ik breng mijn racket</button>
-        <button class="lever-knop" onclick="kiesLever('bezorg', this)">🚲 Ik wil bezorging</button>
-    </div>
 
-            <input type="text" id="naam" placeholder="Jouw naam (Bijv. Jan de Tennisser)">
-            <input type="email" id="email" placeholder="jouw email (Bijv. JandeTennisser@gmail.com)">
-            <textarea id="bericht" placeholder="Jouw bericht (bijv. welk racket, welke snaar, bezorgservice?)"></textarea>
+            <input type="text" id="naam" placeholder="Jouw naam (bijv. Jan de Tennisser)">
+            <input type="email" id="email" placeholder="Jouw e-mail (bijv. jan@gmail.com)">
+
+            <label class="form-label" for="snaar-select">🎾 Welke snaar wil je?</label>
+            <select id="snaar-select">
+                <option value="">-- Kies een snaar --</option>
+                <option value="Head Sonic Pro (€20,-)">Head Sonic Pro </option>
+                <option value="Pro's Pro (€15,-)">Pro's Pro </option>
+                <option value="Babolat Hurricane (€17,50,-)">Babolat Hurricane </option>
+                <option value="Luxilon Alu Power (€35,-)">Luxilon Alu Power </option>
+            </select>
+
+           <div class="form-checkboxes">
+    <label class="checkbox-label">
+        <input type="checkbox" id="check-haalbren"> Haal- en brengservice (laat je adres weten)
+    </label>
+    <label class="checkbox-label">
+        <input type="checkbox" id="check-grip"> Nieuw gripje
+    </label>
+    <label class="checkbox-label">
+        <input type="checkbox" id="check-demper"> Demper
+    </label>
+</div>
+            <textarea id="bericht" placeholder="Nog iets te melden? (bijv. gewenste spanning, bezorgadres, opmerkingen)"></textarea>
+
             <button class="cta-knop" onclick="verstuurBericht()">Verstuur bericht →</button>
-            <p class="reactietijd"> We reageren meestal binnen 24 uur!</p>
-            <p id="form-bevestiging" class="verborgen form-ok">✅ Bedankt! We nemen snel contact met je op.</p>
+            <p class="reactietijd">We reageren meestal binnen 24 uur!</p>
+            <p id="form-bevestiging" class="verborgen form-ok">✅ Bedankt! Je mail-app opent nu.</p>
         </div>
     </section>
 </main>
