@@ -170,3 +170,14 @@ function verschuif(r) {
     huidig = (huidig + r + slides.length) % slides.length;
     track.style.transform = `translateX(-${huidig * 100}%)`;
 }
+
+function kiesLever(keuze, knop) {
+    document.querySelectorAll('.lever-knop').forEach(k => k.classList.remove('actief'));
+    knop.classList.add('actief');
+    const bericht = document.getElementById('bericht');
+    if (keuze === 'breng') {
+        bericht.placeholder = 'Welk racket en welke snaar wil je? (je brengt het zelf langs)';
+    } else {
+        bericht.placeholder = 'Welk racket en welke snaar wil je? Wat is je bezorgadres?';
+    }
+}

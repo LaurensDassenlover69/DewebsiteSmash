@@ -48,12 +48,20 @@
             </p>
         </div>
 
+
+
         <div class="contact-form">
             <h2>✉️ Stuur een bericht</h2>
+             <div class="lever-keuze">
+        <button class="lever-knop actief" onclick="kiesLever('breng', this)">🎾 Ik breng mijn racket</button>
+        <button class="lever-knop" onclick="kiesLever('bezorg', this)">🚲 Ik wil bezorging</button>
+    </div>
+
             <input type="text" id="naam" placeholder="Jouw naam (Bijv. Jan de Tennisser)">
             <input type="email" id="email" placeholder="jouw email (Bijv. JandeTennisser@gmail.com)">
             <textarea id="bericht" placeholder="Jouw bericht (bijv. welk racket, welke snaar, bezorgservice?)"></textarea>
             <button class="cta-knop" onclick="verstuurBericht()">Verstuur bericht →</button>
+            <p class="reactietijd"> We reageren meestal binnen 24 uur!</p>
             <p id="form-bevestiging" class="verborgen form-ok">✅ Bedankt! We nemen snel contact met je op.</p>
         </div>
     </section>

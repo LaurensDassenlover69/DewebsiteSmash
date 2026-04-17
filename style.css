@@ -939,3 +939,35 @@ footer a:hover { text-decoration: underline; }
     .quiz-container { padding: 28px 18px; }
     .quiz-stap h3   { font-size: 1.15rem; }
 }
+.lever-keuze {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.lever-knop {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid var(--border);
+    background: var(--lichtgrijs);
+    color: var(--tekst);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.lever-knop.actief,
+.lever-knop:hover {
+    border-color: var(--oranje);
+    color: var(--oranje);
+    background: var(--kaart);
+}
+
+.reactietijd {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 6px;
+}
