@@ -35,8 +35,6 @@ function berekenPrijs() {
         el.textContent = '€' + totaal.toFixed(2).replace('.', ',').replace(',00', ',-');
     }
 }
-<<<<<<< HEAD
-=======
 function verstuurBericht() {
     const naam = document.getElementById('naam')?.value.trim();
     const email = document.getElementById('email')?.value.trim();
@@ -56,4 +54,3 @@ function verstuurBericht() {
         bevestiging.classList.remove('verborgen');
     }
 }
->>>>>>> d88737b9af920a5a1190f1c022f7df9357e1764a
